@@ -8,5 +8,12 @@ Skeletal framework for long-term, indefinite training that is conducted in multi
 - Hit the switch to start training.
 - Open up TensorBoard and see the graph of the loss function, check out the kernels, etc.
 - Wait for a while, refresh TensorBoard, and see how things are coming along.
-- Hit some kind of "pause button" and shut everything down for a while.
+- Hit a "pause button" and shut everything down for a while.
 - Come back later, fire it up again, and it picks up right where it left off without misssing a beat.
+
+The "pause button" is implemented by watching for the existence of a file (named "pause") in the training directory. Once such a file is detected, the model is saved, training shuts down, and the *pause* file is deleted (to prepare for the next training session).  
+
+On Linux, training is paused with the command
+```
+touch pause
+```
