@@ -1,9 +1,12 @@
 # TensorFlow-Notebooks
 
+## generate\_data-1.ipynb
+Small notebook to create a random 2D dataset, visualize it, and store it in a directory of CSV files to be read by a binary classifier.
+
 ## cnn-1.ipynb
 This is a basic four-layer convolutional neural network originally taken from Udacity's deep learning course's Assignment 4. I heavily reorganized it, added some extra machine learning tricks, updated it for TensorFlow 1.0, and replaced some pieces of it with bits of Google's cifar10.py code.
 
-## PausibleTraining.ipynb
+## pausible\_training.ipynb
 Skeletal framework for long-term, indefinite training that is conducted in multiple, discrete sessions spread out over time.  Using this as a template for a machine learning experiment, the training phase works like this:
 - Hit the switch to start training.
 - Open up TensorBoard and see the graph of the loss function, check out the kernels, etc.
@@ -13,7 +16,7 @@ Skeletal framework for long-term, indefinite training that is conducted in multi
 
 The "pause button" is implemented by watching for the existence of a file (named "pause") in the training directory. Once such a file is detected, the model is saved, training shuts down, and the *pause* file is deleted (to prepare for the next training session).  
 
-On Linux, training is paused with the command
+On Linux, training is paused with the shell command
 ```
-touch pause
+touch /path/to/training/directory/pause
 ```
