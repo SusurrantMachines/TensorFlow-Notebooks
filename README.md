@@ -1,5 +1,10 @@
 # TensorFlow-Notebooks
 
+## graph-save-load.ipynb
+**Saving and Restoring the Model Using a Managed Session**
+
+Short demonstration of how to save a model (graph + metagraph) within a managed session and reload it using tf.train.import\_meta\_graph().
+
 ## cnn-1.ipynb
 **My First Convolutional Neural Network**
 
