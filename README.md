@@ -41,3 +41,7 @@ Small notebook to create a random 2D dataset, visualize it, and store it in a di
 Demonstrates how to build a robust, multi-threaded input pipeline that rifles through a directory of CSV files, preparing shuffled batches of examples from them indefinitely.  *generate\_data.ipynb* can be used to create the input files.  Ends with the pausable training scheme used in *apparatus-1.ipynb*.
 
 The input pipeline is used to train a simple logisitic regression model in a "pausable" training session (as developed in *apparatus-1.ipynb*.
+
+
+## csv-dataset-partitioner
+Reads a dataset from CSV files, shuffles it, writes it to a new collection of CSV files organized into subdirectories for training, validation (or cross validation), and testing.
