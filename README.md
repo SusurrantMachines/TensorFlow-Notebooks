@@ -44,4 +44,10 @@ The input pipeline is used to train a simple logisitic regression model in a "pa
 
 
 ## csv-dataset-partitioner
+**Preprocessing**
 Reads a dataset from CSV files, shuffles it, writes it to a new collection of CSV files organized into subdirectories for training, validation (or cross validation), and testing.
+
+## apparatus-3.ipynb
+**Skeletal Machine Learning Framework 3: TensorBoard, new dataset**
+Add TensorBoard monitoring to apparatus-2 and switch to a better organized dataset.
+
