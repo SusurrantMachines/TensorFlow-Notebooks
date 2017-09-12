@@ -45,9 +45,21 @@ The input pipeline is used to train a simple logisitic regression model in a "pa
 
 ## csv-dataset-partitioner
 **Preprocessing**
+
 Reads a dataset from CSV files, shuffles it, writes it to a new collection of CSV files organized into subdirectories for training, validation (or cross validation), and testing.
 
 ## apparatus-3.ipynb
 **Skeletal Machine Learning Framework 3: TensorBoard, new dataset**
-Add TensorBoard monitoring to apparatus-2 and switch to a better organized dataset.
+
+Adds TensorBoard monitoring to apparatus-2 and switches to a dataset with training, validation, and test batches.
+
+## apparatus-4.ipynb
+**Skeletal Machine Learning Framework 4: Validation and Early Stopping**
+
+Adds a validation set that is used to implement early stopping regularization:
+- Periodically evaluate the model on the validation set.
+- If the validation loss is the lowest it's ever been during training, save a copy the model.
+- If the validation loss hasn't improved in a long time, stop training and go back to the last copy that was saved (when it got the lowest validation loss ever).
+
+Recall that in apparatus-2 and apparatus-3, we used queue runners to load up minibatches of training data.  Westill do that here, but since the validation set is much smaller, we load the whole thing into CPU memory.  We assume GPU memory is tight, however, so when it's time to run the model on the validation set we don't copy the whole validation set into GPU memory: we use a feed\_dict and placeholders like we did back in cnn-1, and apparatus-1.  
 
